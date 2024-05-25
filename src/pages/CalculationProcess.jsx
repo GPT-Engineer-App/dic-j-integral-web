@@ -1,7 +1,10 @@
 import React from "react";
 import { Container, VStack, Text, Box } from "@chakra-ui/react";
+import { useLocation } from "react-router-dom";
 
 const CalculationProcess = () => {
+  const location = useLocation();
+  const { calculatedValues } = location.state || {};
   return (
     <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
       <VStack spacing={4} width="100%">
@@ -13,6 +16,22 @@ const CalculationProcess = () => {
           <Text>Step 4: Plan Integration Area</Text>
           <Text>Step 5: Calculate J-Integral</Text>
         </Box>
+        {calculatedValues && (
+          <Box>
+            <Text fontSize="xl">Calculated Values:</Text>
+            <Text>Value 1: {calculatedValues.value1}</Text>
+            <Text>Value 2: {calculatedValues.value2}</Text>
+            <Text>Value 3: {calculatedValues.value3}</Text>
+          </Box>
+        )}
+        {calculatedValues && (
+          <Box>
+            <Text fontSize="xl">Calculated Values:</Text>
+            <Text>Value 1: {calculatedValues.value1}</Text>
+            <Text>Value 2: {calculatedValues.value2}</Text>
+            <Text>Value 3: {calculatedValues.value3}</Text>
+          </Box>
+        )}
       </VStack>
     </Container>
   );

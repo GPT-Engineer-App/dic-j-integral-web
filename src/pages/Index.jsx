@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Container, VStack, Text, Button, Input, Image, Box, useToast } from "@chakra-ui/react";
 import { FaSearch, FaCalculator, FaInfoCircle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import CalculationProcess from "./CalculationProcess.jsx";
 
 const Index = () => {
   const [images, setImages] = useState([]);
@@ -25,7 +26,6 @@ const Index = () => {
   };
 
   const handleAnalyzeDIC = () => {
-    // Placeholder for DIC analysis logic
     toast({
       title: "DIC Analysis",
       description: "DIC analysis has been performed.",
@@ -35,7 +35,16 @@ const Index = () => {
     });
   };
 
+  const navigate = useNavigate();
+
   const handleCalculateJIntegral = () => {
+    const calculatedValues = {
+      value1: 123,
+      value2: 456,
+      value3: 789,
+    };
+
+    navigate("/calculation-process", { state: { calculatedValues } });
     // Placeholder for J-integral calculation logic
     toast({
       title: "J-Integral Calculation",
