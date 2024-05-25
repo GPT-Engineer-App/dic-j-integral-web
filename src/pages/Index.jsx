@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Container, VStack, Text, Button, Input, Image, Box, IconButton, useToast } from "@chakra-ui/react";
-import { FaUpload, FaSearch, FaCalculator } from "react-icons/fa";
+import { Container, VStack, Text, Button, Input, Image, Box, useToast } from "@chakra-ui/react";
+import { FaSearch, FaCalculator, FaInfoCircle } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const Index = () => {
   const [images, setImages] = useState([]);
